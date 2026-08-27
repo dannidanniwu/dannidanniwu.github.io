@@ -115,7 +115,7 @@ The alternative to modeling treatment is modeling the outcome. Fit a model for $
 The two families lean on different assumptions, and that is the useful part. IP weighting needs the *treatment* model right; outcome regression needs the *outcome* model right. Which means:
 
 - **Run both.** Large disagreement between the IP-weighted and outcome-regression estimates is a warning that at least one model is seriously misspecified. Agreement is reassuring but not proof — both could be wrong in the same direction.
-- **Better, use a doubly robust estimator**, which combines a treatment model and an outcome model in a single estimator. Under exchangeability and positivity, it is consistent if *either* model is correct, and you do not need to know which one. Two chances to get it right.
+- **Use a doubly robust estimator**, which combines a treatment model and an outcome model in a single estimator. Under exchangeability and positivity, it is consistent if *either* model is correct, and you do not need to know which one. Two chances to get it right.
 
 ## A working checklist
 
