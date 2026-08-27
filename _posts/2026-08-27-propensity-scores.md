@@ -1,4 +1,5 @@
 ---
+toc: true
 layout: post
 title: "Propensity Scores: What They Do, and What They Don't"
 date: 2026-08-27
