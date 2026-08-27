@@ -270,3 +270,79 @@ h2.section-title {
 .footer-links { display: flex; gap: 1.2rem; }
 .footer-links a { color: var(--muted); }
 .footer-links a:hover { color: var(--teal); }
+
+/* ---------- Table of contents ---------- */
+
+.toc[hidden], .toc-mobile[hidden] { display: none; }
+
+/* Sidebar, parked in the margin beside the 46rem column */
+.toc {
+  position: fixed;
+  top: 8rem;
+  left: calc(50% - 23rem - 15.5rem);
+  width: 13.5rem;
+  max-height: 68vh;
+  overflow-y: auto;
+  font-family: var(--sans);
+}
+
+.toc-label {
+  margin: 0 0 .6rem;
+  font-size: .7rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid var(--hairline);
+}
+
+.toc-list li { margin: 0; }
+
+.toc-list a {
+  display: block;
+  margin-left: -1px;
+  padding: .3rem 0 .3rem .8rem;
+  border-left: 2px solid transparent;
+  font-size: .82rem;
+  line-height: 1.35;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.toc-list a:hover { color: var(--ink); }
+.toc-list a.is-current { color: var(--teal); border-left-color: var(--teal); }
+.toc-list .toc-h3 a { padding-left: 1.6rem; font-size: .78rem; }
+
+/* Collapsible version for narrow screens */
+.toc-mobile {
+  margin: 0 0 2rem;
+  padding: .7rem 1rem;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: var(--tint);
+  font-family: var(--sans);
+}
+
+.toc-mobile summary {
+  cursor: pointer;
+  font-size: .85rem;
+  color: var(--ink);
+}
+
+.toc-mobile .toc-list {
+  margin-top: .6rem;
+  border-left: none;
+}
+
+@media (min-width: 1180px) { .toc-mobile { display: none; } }
+@media (max-width: 1179px) { .toc { display: none; } }
+
+/* Jump targets shouldn't land flush against the viewport edge */
+.post-body h2, .post-body h3 { scroll-margin-top: 2rem; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
