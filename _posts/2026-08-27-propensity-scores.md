@@ -4,6 +4,7 @@ title: "Propensity Scores: What They Do, and What They Don't"
 date: 2026-08-27
 tags: [causal inference, propensity scores]
 math: true
+excerpt: "Here is what a propensity score buys you."
 ---
 
 Start with a story.
