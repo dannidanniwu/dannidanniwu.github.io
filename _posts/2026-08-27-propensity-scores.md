@@ -36,7 +36,7 @@ In an ideal randomized trial with 1:1 allocation, $\pi(L) = 0.5$ for everyone, w
 
 An observational study can be conceptualized as a conditionally randomized experiment — one in which the probability of assignment depends on the covariates $L$, rather than being the same for everyone — only if three conditions hold.
 
-**Consistency.** The observed outcome for a treated person equals the outcome she would have had under treatment, and the observed outcome for an untreated person equals the outcome she would have had if she had remained untreated. Implicit in this is *no interference*: whether one person receives treatment has no effect on anyone else's potential outcomes.
+**Consistency.** The observed outcome for a treated person equals the outcome she would have had under treatment, and the observed outcome for an untreated person equals the outcome she would have had if she had remained untreated. 
 
 **Exchangeability.** The probability of receiving each treatment level depends only on the measured covariates $L$ — no unmeasured confounders. Put plainly: after adjusting for $L$, any remaining outcome difference between treated and untreated is attributable to treatment itself.
 
