@@ -12,7 +12,7 @@ Start with a story.
 
 Older patients are more likely to receive the treatment; younger patients mostly end up in the control group. But younger patients recover better than older ones no matter what you give them. So even if the treatment genuinely helps, a naive comparison of outcomes between the treated and the untreated can make the treatment look *worse* than doing nothing. Age is doing the work, not the drug.
 
-That is confounding, and it is the problem propensity scores were built to attack. What follows is what a propensity score is, the assumptions that make it work, the single most common way people misuse it, and the two main ways to actually use one.
+That is confounding, and it is the problem propensity scores were built to attack. What follows is what a propensity score is, the assumptions that make it work, a common way people misuse it, and the two main ways to actually use one.
 
 ## The counterfactual setup
 
@@ -28,9 +28,9 @@ Define
 
 $$\pi(L) = \Pr[A = 1 \mid L]$$
 
-the conditional probability of receiving treatment given the measured covariates $L$. This is a person's *propensity* to receive treatment given what you measured about them, which is where the name comes from.
+the conditional probability of receiving treatment ($A=1$) given the measured covariates $L$. This is a person's *propensity* to receive treatment given what you measured about them, which is where the name comes from.
 
-In an ideal randomized trial with 1:1 allocation, $\pi(L) = 0.5$ for everyone, whatever $L$ is. In observational data, treatment assignment is outside the investigator's control, so the true $\pi(L)$ varies across people and is unknown. It has to be estimated — usually by a logistic regression of $A$ on the confounders.
+In an ideal randomized trial with 1:1 allocation, $\pi(L) = 0.5$ for everyone, whatever $L$ is. In observational data, treatment assignment is outside the investigator's control, so the true $\pi(L)$ varies across people and is unknown. It has to be estimated — usually by a logistic regression of treatment $A$ on the confounders.
 
 ## The three assumptions
 
@@ -81,7 +81,7 @@ then use $W^{A,C} = W^A \times W^C$. The censoring weight upweights the uncensor
 
 **Variance.** Because the weights are themselves estimated, the naive standard error is wrong. Two practical options:
 
-1. **Nonparametric bootstrap.** It propagates uncertainty from *both* stages — estimating the propensity model and fitting the structural model. The cost is computation: it requires real resources, or lots of patience, on large databases.
+1. **Nonparametric bootstrap.** It propagates uncertainty from *both* stages — estimating the propensity model and fitting the structural model. The cost is computation: it requires real resources, or lots of patience, on large datasets.
 2. **The robust (sandwich) variance estimator**, standard in most software. Valid but **conservative** — it covers the true parameter more than 95% of the time, so intervals are wider than they need to be.
 
 (A third option, deriving the analytic variance, is correct and efficient but usually means programming the estimator yourself.)
@@ -90,7 +90,7 @@ then use $W^{A,C} = W^A \times W^C$. The censoring weight upweights the uncensor
 
 Pair each treated individual with one or more untreated individuals having a close value of $\pi(L)$ — within 0.05, say. The matched population has, by construction, similar score distributions in both arms.
 
-Choosing how close is close entails a bias–variance tradeoff. Loose criteria match dissimilar people and exchangeability fails; tight criteria discard many people and the intervals widen.
+Choosing how close is close entails a bias–variance tradeoff. Loose criteria match dissimilar people and exchangeability fails; tight criteria discard many people and the confidence intervals widen.
 
 ### Check that it worked
 
