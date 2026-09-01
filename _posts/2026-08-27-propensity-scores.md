@@ -38,7 +38,7 @@ An observational study can be conceptualized as a conditionally randomized exper
 
 **Consistency.** The observed outcome for a treated person equals the outcome she would have had under treatment, and the observed outcome for an untreated person equals the outcome she would have had if she had remained untreated. 
 
-**Exchangeability.** The probability of receiving each treatment level depends only on the measured covariates $L$ — no unmeasured confounders. Put plainly: after adjusting for $L$, any remaining outcome difference between treated and untreated is attributable to treatment itself.
+**Exchangeability.** The probability of receiving each treatment level depends only on the measured covariates $L$ — no unmeasured confounders. Within levels of $L$, all other outcome predictors are equally distributed between the treated and untreated groups. Put plainly: after adjusting for $L$, any remaining outcome difference between treated and untreated is attributable to treatment itself.
 
 **Positivity.** Everyone must have had some chance of receiving each treatment level, i.e. no one has a propensity score of exactly 0 or 1.
 
