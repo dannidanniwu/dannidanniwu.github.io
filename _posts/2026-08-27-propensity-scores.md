@@ -55,7 +55,7 @@ There is a persistent belief that the treatment model — the model you use to e
 
 Take the belief to its limit. If you predicted treatment perfectly, every treated person would have $\pi(L) = 1$ and every untreated person $\pi(L) = 0$. There would be no overlap at all: positivity fails completely.
 
-A prediction mindset also invites *self-inflicted bias*. Colliders are often excellent predictors, and conditioning on them creates systematic bias. Instruments — variables that affect treatment but not the outcome except through treatment — can amplify bias from unmeasured confounders when included.
+A prediction mindset also invites *self-inflicted bias*. Colliders are often excellent predictors, and conditioning on them creates systematic bias. Instruments — variables that affect treatment but not the outcome except through treatment — can amplify bias from confounders when included.
 
 So: propensity models do not need to predict treatment well. They need to contain the confounders that guarantee exchangeability.
 
